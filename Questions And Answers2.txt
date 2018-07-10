@@ -1,0 +1,85 @@
+Q.1)Who is responsible for Servlet's creation,execution and destruction?
+
+A:- Servlet Container is responsible for Servlet's creation,execution and destruction.
+
+Q.2)How Servlet container and web server process a request?
+
+A:- i)Web server receives HTTP request from the User/client.
+   ii)Web server forwards the request to servlet container.
+   iii)The servlet is dynamically retrieved and loaded into the address space of the container, if it is not in the container.
+   iv)The container invokes the init() method of the servlet for initialization(invoked once when the servlet is loaded first time).
+   v)The container invokes the service() method of the servlet to process the HTTP request, i.e., read data in the request and formulate a response. 
+    The servlet remains in the container's address space and can process other HTTP requests.
+   vi)Web server return the dynamically generated results to the correct location.
+   
+Q.3)Any methods exist in servlet life cycle?
+A:-Yes, there are three methods in Servlet life cycle.
+   These are:init() method
+             service() method
+              destroy() method.
+			  In it’s life cycle, the Servlet should exist in one of these three methods.
+			  These methods are callback methods called automatically by Servlet container.
+			  
+Q.4)How to Retrieve Data from ServletConfig Interface Object?	
+		  
+A:-   ServletContext provide these 2 methods, In order to retrieve the data from the web..xml .
+   These are--                  public String getInitParameter(“param name”);
+                                And  public Enumeration getInitParameterNames();
+Q.5)What is ServletContext in java?
+
+A:- i)ServletContext is one of pre-defined interface available in javax.servlet package   .
+
+    ii)Object  of ServletContext interface is available one per web application.
+
+     
+
+ Q.6)What is ServletConfig?
+ 
+ A:- i)ServletConfig is an interface from the javax.servlet package.
+    ii)For each Servlet under execution, a ServletConfig object is created by the servlet container and is used by the programmer to read the servlet specific data declared in the web.xml.
+	
+ Q.7)What is  the important job of HttpServletRequest interface?
+ 
+A:- HttpServletRequest interface adds the methods that relates to the HTTP protocol. 
+
+Q.8)What is  Servlet Response?
+
+A:- Servlet API provides two important interfaces ServletResponse and HttpServletResponse to assist in sending response to client.
+ 
+Q.9)What is  HTTPServlet Response Interface ? 
+
+ A:- HTTPServlet Response Interface   adds the methods that relates to the HTTP response.
+
+Q.10)What is  Request Dispatcher?
+
+ A:-RequestDispatcher is an interface, implementation of which defines an object which can dispatch request to any resources(such as HTML, Image, JSP, Servlet) on the server.
+ 
+ Q.11) What are the Various methods of Request Dispatcher?
+ 
+A:- There are two different methods of Request Dispatcher; these are : void forward(ServletRequest request, ServletResponse response) and void include(ServletRequest request, ServletResponse response).
+
+Q.12) What is the work of sendRedirect() Method?
+
+A:-sendRedirect() method redirects the response to another resource.
+ This method actually makes the client(browser) to create a new request to get to the resource. 
+  The client can see the new url in the browser.
+
+Q.13)What is the main differnce between RequestDispatcher() and sendRedirect () ?
+  
+  A:-i)The main difference between a redirection and a request dispatching is that, redirection makes the client(browser) create a new request to get to the resource, the user can see the new URL while request dispatch get the resource in same request and URL does not changes.
+     ii)Another very important difference is that, sendRedirect() works on response object while request dispatcher work on request object.
+	 
+Q.14) What is an Attribute?
+
+A:-i)An attribute is an object that is used to share information in a web app. 
+    ii)Attribute allows Servlets to share information among themselves.
+	iii) Attributes can be SET and GET from one of the following scopes : Request,Session and Application.
+	
+Q.15)What is the method used to set an Attribute?
+
+A:- public void setAttribute(String name,Object obj) methopd is used to set an Attribute.
+
+Q.16) What method is used to get an Attribute?
+
+A:- object getAttribute(String name) method is used to get an Attribute.
+
